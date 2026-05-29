@@ -25,19 +25,19 @@ Significant activation was found in bilateral frontal, parietal, and cingulate r
 | -54, 6, 24                | 134.30  | Left inferior frontal gyrus |
 | 2, 18, 14                 | 134.23  | Anterior cingulate cortex |
 
-Full statistical table is available in the `results/` folder.
+Full statistical table is shown below:
 
-![Statistical results](results/group_activation.png)
+![Statistical table](results/group_activation.png)
 
 ## Repository Structure
 - `scripts/` – MATLAB batch scripts for preprocessing, first-level, and second-level analysis
 - `results/` – Statistical table and design matrix
-- `docs/` – Experimental design documentation (to be added)
+- `docs/` – Experimental design documentation (will be added later)
 
 ## How to Reproduce
 1. Install MATLAB and SPM25.
-2. Download the ds000105 dataset.
-3. Modify the root path in the scripts.
+2. Download the ds000105 dataset from OpenNeuro.
+3. Modify the root path in the scripts to point to your data location.
 4. Run the scripts in order: preprocessing → first-level → second-level.
 
 ## Future Directions
