@@ -1,18 +1,44 @@
-# fMRI Analysis Portfolio
+# fMRI Analysis Portfolio: Face > House Group Study
+
+**Author**: 段文晶  
+**Date**: May 2026  
+**Data**: ds000105 (OpenNeuro)  
+**Tools**: MATLAB R2025b, SPM25
 
 ## Overview
-This repository contains fMRI data analysis scripts and results from a group study (Face > House contrast) using SPM25.
+This repository contains a complete fMRI data analysis pipeline using SPM25. The goal was to examine brain activation for the contrast **Face > House** in a group of participants (N=5). The analysis includes preprocessing, first-level (individual) GLM modeling, and second-level (group) one-sample t-test.
 
-## Key Findings
-- Significant activation in bilateral frontal and parietal regions (FWE-corrected p<0.05)
-- Peak coordinates: (-32, -4, 20), T=279.20
+## Analysis Steps
+- Preprocessing: Realign, Slice Timing, Normalise (MNI template), Smooth (8mm FWHM)
+- First-level: GLM with two conditions (Face, House), duration=0
+- Second-level: One-sample t-test on contrast images `con_0001.nii` (Face > House)
 
-## Contents
-- `scripts/` – MATLAB batch scripts (to be added)
-- `results/` – Activation maps and statistical tables (to be added)
-- `docs/` – Experimental design documentation (to be added)
+## Key Results (Group Level)
+**Threshold**: FWE-corrected p < 0.05, extent threshold k = 0
 
-## How to Reproduce
+Significant activation was found in bilateral frontal, parietal, and cingulate regions.
+
+| MNI coordinates (x, y, z) | T-value | Approximate region |
+|---------------------------|---------|---------------------|
+| -32, -4, 20               | 279.20  | Left precentral gyrus |
+| 32, -10, 20               | 137.40  | Right precentral gyrus |
+| -54, 6, 24                | 134.30  | Left inferior frontal gyrus |
+| 2, 18, 14                 | 134.23  | Anterior cingulate cortex |
+
+Full statistical table and activation maps are available in the `results/` folder (to be added).
+
+## Repository Structure
+- `scripts/` – MATLAB batch scripts (coming soon)
+- `results/` – Activation maps and statistical tables (coming soon)
+- `docs/` – Experimental design documentation (coming soon)
+
+## How to Reproduce (once scripts are added)
 1. Install MATLAB and SPM25.
-2. Download ds000105 dataset.
-3. Run the scripts in `scripts/` (coming soon).
+2. Download the ds000105 dataset.
+3. Modify the root path in the scripts.
+4. Run the scripts in order: preprocessing → first-level → second-level.
+
+## Future Directions
+- ROI analysis (Marsbar)
+- Functional connectivity (CONN)
+- Representational similarity analysis (RSA)
